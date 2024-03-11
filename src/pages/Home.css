@@ -1,0 +1,47 @@
+
+.speech-bubble__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.speech-bubble {
+
+    position: relative;
+    max-width: 30em;
+    background-color: #D4CAC8;
+    padding: 20px;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    margin-bottom: 50px;
+}
+
+.speech-bubble::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 10%;
+	left: -2.5%;
+    transform: rotate(-0.25turn);
+	border: .75rem solid transparent;
+	border-top: none;
+	border-bottom-color: #D4CAC8;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
+
+
+.image__circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
