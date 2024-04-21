@@ -29,6 +29,7 @@ export default function Detail() {
                 </div>
                 <div className='info__container'>
                     <h2>{itemInfo.name}</h2>
+                    <h3>{itemInfo.author}</h3>
                     <p>{itemInfo.price}</p>
                     <p>{itemInfo.description}</p>
                 </div>
