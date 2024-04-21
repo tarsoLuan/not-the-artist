@@ -1,25 +1,19 @@
 
+import { useEffect, useState } from 'react';
 import './Items.css';
 import Item from "../components/item/Item";
+import { getComics } from '../infra/getData';
 
 export default function Quadrinhos() {
-    const items = [
-        {
-            img: "src/imgs/maus.jpeg",
-            title: "Maus",
-            price: "R$ 39,90"
-        },
-        {
-            img: "src/imgs/watchmen.jpg",
-            title: "Watchmen (Edicao Definitiva)",
-            price: "R$ 439,78"
-        },
-        {
-            img: "src/imgs/yourname.jpeg",
-            title: "Your Name",
-            price: "R$ 29,90"
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const comics = await getComics();
+            setItems(comics);
         }
-    ];
+        fetchData();
+    }, []);
 
     return (
         <div style={{paddingTop: '40px'}}>

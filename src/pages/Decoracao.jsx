@@ -1,25 +1,19 @@
 
+import { useEffect, useState } from 'react';
 import './Items.css';
 import Item from "../components/item/Item";
+import { getDecoration } from '../infra/getData';
 
 export default function Decoracao() {
-    const items = [
-        {
-            img: "src/imgs/aang.jpeg",
-            title: "Funko Pop Aang",
-            price: "R$ 189,00"
-        },
-        {
-            img: "src/imgs/potter.jpeg",
-            title: "Funco Pop Harry Potter",
-            price: "R$ 124,90"
-        },
-        {
-            img: "src/imgs/spiderman.jpeg",
-            title: "Funko Pop Spiderman",
-            price: "R$ 162,90"
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const decoration = await getDecoration();
+            setItems(decoration);
         }
-    ];
+        fetchData();
+    }, []);
 
     return (
         <div style={{paddingTop: '40px'}}>
